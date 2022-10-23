@@ -1,0 +1,194 @@
+# See
+# https://www.bibtex.com/e/entry-types/
+# https://www.bibtex.com/f/pages-field/
+
+priority 1
+
+snippet article "An article from a journal, magazine, newspaper, or periodical." b
+@article{${1:citekey},
+	author   = "${2:author}",
+	title    = "${3:title}",
+	journal  = "${4:journal}",
+	year     = ${5:year},
+	volume   = "${6:volume}",
+	number   = "${7:number}",
+	pages    = "${8:start}--${9:end}"
+}
+${0}
+endsnippet
+
+
+snippet book "A book where the publisher is clearly identifiable." b
+@book{${1:citekey},
+	author    = "${2:author}",
+	title     = "${3:title}",
+	publisher = "${4:publisher}",
+	address   = "${5:address}",
+	year      = ${6:year}
+}
+${0}
+endsnippet
+
+
+snippet booklet "A printed work that is bound, but does not have a clearly identifiable publisher or supporting institution." b
+@booklet{${1:citekey},
+	title        = "${2:title}",
+	author       = "${3:author}", 
+	howpublished = "${4:howpublished}",
+	month        = "${5:month}",
+	year         = ${6:year}
+}
+endsnippet	
+
+snippet inbook "A section, such as a chapter, or a page range within a book." b
+@inbook{${1},
+	author    = "${2:author}",
+	title     = "${3:title}",
+	booktitle = "${4:booktitle}",
+	year      = ${5:year},
+	publisher = "${6:publisher}",
+	address   = "${7:address}",
+	pages     = "${8:start}--${9:end}"
+}
+${0}
+endsnippet
+
+
+snippet incollection "A titled section of a book. Such as a short story within the larger collection of short stories that make up the book." b
+@incollection{${1:citekey},
+	author    = "${2:author}",
+	editor    = "${3:editor}",
+	title     = "${4:title}",
+	booktitle = "${5:booktitle}",
+	year      = ${6:year},
+	publisher = "${7:publisher}",
+	address   = "${8:address}",
+	pages     = "${9:start}--${10:end}"
+}
+${0}
+endsnippet
+
+snippet inproceedings "" b
+@inproceedings{${1:citekey},
+	author    = "${2:author}",
+	title     = "${3:title}",
+	booktitle = "${4:booktitle}",
+	series    = "${5:series}",
+	year      = ${6:year},
+	pages     = "${7:start}--${8:end}",
+	publisher = "${9:publisher}",
+	address   = "${10:address}"
+}
+${0}
+endsnippet
+
+
+snippet manual "A document that has not been officially published such as a paper draft or manuscript in preparation." b
+@manual{${1:citekey},
+	title        = "${2:title}",
+	author       = "${3:author}",
+	organization = "${4:organization}",
+	address      = "${5:address}",
+	year         = ${6:year}
+}
+${0}
+endsnippet
+
+snippet mastersthesis "A thesis written for the Master’s level degree." b
+@mastersthesis{${1:citekey},
+	author  = "${2:author}",
+	title   = "${3:title}",
+	school  = "${4:school}",
+	year    = ${5:year},
+	address = "${6:address}",
+	month   = "${7:month}",
+}
+${0}
+endsnippet
+
+
+snippet misc "Used if none of the other entry types quite match the source. Frequently used to cite web pages, but can be anything from lecture slides to personal notes." 
+@misc{${1:citekey},
+	title        = "${2:title}",
+	author       = "${3:author}",
+	howpublished = "${4:howpublished}",
+	year         = ${5:year},
+	note         = "${6:note}"
+}
+${0}
+endsnippet
+
+	
+snippet phdthesis "A thesis written for the PhD level degree." b
+@phdthesis{${1:citekey},
+	author  = "${2:author}",
+	title   = "${3:title}",
+	school  = "${4:school}",
+	address = "${5:address}",
+	year    = ${6:year},
+	month   = "${7:month}"
+}
+${0}
+endsnippet
+
+snippet proceedings "A conference proceeding." b
+@proceedings{${1:citekey},
+	editor    = "${2:editor}",
+	title     = "${3:title}",
+	series    = "${4:series}",
+	volume    = "${5:volume}",
+	publisher = "${6:publisher}",
+	address   = "${7:address}",
+	year      = ${8:year}
+}
+${0}
+endsnippet
+
+
+snippet techreport "An institutionally published report such as a report from a school, a government organization, an organization, or a company. This entry type is also frequently used for white papers and working papers." b
+@techreport{${1:techreport},
+	title       = "${2:title}",
+	author      = "${3:author}",
+	institution = "${4:institution}",
+	address     = "${5:address}",
+	number      = "${6:number}",
+	year        = ${7:year},
+	month       = "${8:month}"
+}
+${0}
+endsnippet
+
+snippet unpublished "A document that has not been officially published such as a paper draft or manuscript in preparation." b
+@unpublished{${1:citekey},
+	author = "${2:author}",
+	title  = "${3:title}",
+	year   = ${4:year}
+}
+${0}
+endsnippet
+
+
+###############################################################################
+# custom
+###############################################################################
+snippet online "misc to cite web pages" 
+@misc{${1:citekey},
+	title        = "${2:title}",
+	author       = "${3:author}",
+	howpublished = "\url{${4}}",
+	year         = ${5},
+	note         = "Accessed: ${6:year}-${7:month}-${8:day}"
+}
+${0}
+endsnippet
+
+snippet twiki "misc to cite twiki pages" 
+@misc{CMSPublic:${1:citekey},
+	title        = "${2:title}",
+	author       = "CMS Collaboration",
+	howpublished = "\url{${4}}",
+	year         = ${5},
+	note         = "Accessed: ${6:year}-${7:month}-${8:day}"
+}
+${0}
+endsnippet

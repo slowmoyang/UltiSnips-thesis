@@ -1,0 +1,14 @@
+snippet graphicspath "graphicspath" bi
+\makeatletter
+	\graphicspath{ {\import@path/fig/} }
+\makeatother
+endsnippet
+
+# https://ctan.org/pkg/import
+snippet import "import" bi
+\import{${1:full_path}}{${2:file}}
+endsnippet
+
+snippet subimport "subimport" bi
+\subimport{${1:path_extension}}{${2:file}}
+endsnippet
